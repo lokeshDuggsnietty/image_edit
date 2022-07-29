@@ -5,81 +5,106 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <RelativeLayout
+<RelativeLayout
 
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".MainActivity"
-            tools:ignore="HardcodedText">
-
-
-            <ImageView
-                android:id="@+id/PreviewImage"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="16dp" />
-
-            <Button
-                android:id="@+id/imageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="32dp"
-                android:layout_below="@id/PreviewImage"
-                android:text="choose image"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/editImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imageButton"
-                android:layout_marginTop="32dp"
-                android:layout_marginStart="16dp"
-                android:text="EDIT IMAGE"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:visibility="gone" />
-
-            <Button
-                android:id="@+id/exif"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imageButton"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="16dp"
-                android:text="exif info"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:visibility="gone" />
-
-            <Button
-                android:id="@+id/cropImage"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="32dp"
-                android:layout_below="@id/editImage"
-                android:text="crop IMAGE"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText">
 
 
-            <TextView
-                android:id="@+id/textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/cropImage"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:text="exif info"
-                android:textSize="24dp" />
+    <ImageView
+        android:id="@+id/IVPreviewImage"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp" />
 
-        </RelativeLayout>
+    <Button
+        android:id="@+id/BSelectImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:layout_below="@id/IVPreviewImage"
+        android:text="choose image"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/editImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/BSelectImage"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:text="EDIT IMAGE"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/exif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BSelectImage"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="exif info"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/cropImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="crop IMAGE"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/flipHorizental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cropImage"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:text="flipH"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/flipVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cropImage"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="flipV"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/flipHorizental"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="exif info"
+        android:textSize="24dp" />
+
+</RelativeLayout>
     </ScrollView>
 </layout>
