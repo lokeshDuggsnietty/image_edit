@@ -8,7 +8,6 @@ import android.content.Intent
 import android.net.Uri
 import android.view.View
 import androidx.exifinterface.media.ExifInterface
-import com.theartofdev.edmodo.cropper.CropImage
 import java.io.IOException
 import java.io.InputStream
 
@@ -37,8 +36,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun cropImage() {
-        CropImage.activity(selectedImageUri)
-            .start(this)
+        val intent:Intent = Intent("com.android.camera.action.CROP")
+        intent.setDataAndType(selectedImageUri,"image/*")
+        intent.putExtra("crop",true)
+        intent.putExtra("aspectX",1)
+        intent.putExtra("aspectY",1)
+        intent.putExtra("outputX",128)
+        intent.putExtra("outputY",128)
+        intent.putExtra("return-data",true)
+     startActivityForResult(intent,123)
     }
 
     private fun imageChooser() {
@@ -61,15 +67,13 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            var result: CropImage.ActivityResult = CropImage.getActivityResult(data)
-            if (resultCode == RESULT_OK) {
-                var result: Uri = result.uri
-                binding.PreviewImage.setImageURI(result)
-                binding.editImage.visibility = View.GONE
-                binding.cropImage.visibility = View.GONE
-                binding.exif.visibility = View.GONE
-            }
+       if (requestCode == 123) {
+           val extras: Bundle? = data?.extras
+            val pic: Bitmap? = extras?.getParcelable("data")
+            binding.PreviewImage.setImageBitmap(pic)
+            binding.editImage.visibility = View.GONE
+            binding.exif.visibility = View.GONE
+            binding.cropImage.visibility = View.GONE
         }
     }
 
