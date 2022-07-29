@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
     fun flipImage(src:Bitmap,type:Int){
         val matrix:Matrix = Matrix()
         if(type==1){
-            matrix.preScale(-1.0f,1.0f)
+            matrix.preScale(1.0f,-1.0f)
         }else if (type == 2)
             matrix.preScale(-1.0f,1.0f)
         val flipPicture:Bitmap =  Bitmap.createBitmap(src,0,0,src.width,src.height,matrix,true)
